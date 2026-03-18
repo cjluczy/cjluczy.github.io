@@ -1,0 +1,38 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="44" fill="url(#bg)"/>
+  <circle cx="1034" cy="158" r="170" fill="url(#glow1)" opacity="0.7"/>
+  <circle cx="206" cy="140" r="138" fill="url(#glow2)" opacity="0.72"/>
+  <path d="M0 484C136 438 279 424 424 456C576 489 654 570 800 594C952 618 1084 594 1200 542V760H0V484Z" fill="url(#wave1)"/>
+  <path d="M0 586C124 562 251 556 404 592C576 633 644 726 840 714C976 706 1094 658 1200 620V760H0V586Z" fill="url(#wave2)"/>
+  <g opacity="0.56">
+    <path d="M170 246C246 180 374 170 474 215C552 251 614 327 694 346" stroke="white" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M742 214C818 184 915 192 985 236C1048 275 1102 345 1172 370" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+  <rect x="722" y="132" width="282" height="168" rx="28" fill="white" fill-opacity="0.12"/>
+  <rect x="768" y="178" width="126" height="16" rx="8" fill="white" fill-opacity="0.82"/>
+  <rect x="768" y="214" width="188" height="12" rx="6" fill="white" fill-opacity="0.58"/>
+  <rect x="768" y="246" width="144" height="12" rx="6" fill="white" fill-opacity="0.58"/>
+  <defs>
+    <linearGradient id="bg" x1="88" y1="34" x2="1140" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EFF7FF"/>
+      <stop offset="0.5" stop-color="#FFF6FB"/>
+      <stop offset="1" stop-color="#EEFBFF"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1034 158) rotate(90) scale(170)">
+      <stop stop-color="#FEB8D6"/>
+      <stop offset="1" stop-color="#FEB8D6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(206 140) rotate(90) scale(138)">
+      <stop stop-color="#90A9FF"/>
+      <stop offset="1" stop-color="#90A9FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wave1" x1="50" y1="442" x2="1118" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D8E3FF"/>
+      <stop offset="1" stop-color="#D9F7FF"/>
+    </linearGradient>
+    <linearGradient id="wave2" x1="72" y1="560" x2="1128" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B7C8FF"/>
+      <stop offset="1" stop-color="#B2EDFF"/>
+    </linearGradient>
+  </defs>
+</svg>
