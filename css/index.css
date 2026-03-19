@@ -7256,7 +7256,12 @@ a {
   -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
-  min-height: 88vh;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: auto !important;
+  min-height: 92vh;
+  padding: 104px 0 72px;
   background-position: center 22%;
 }
 #page-header.full_page:before {
@@ -7314,6 +7319,12 @@ a {
   -o-transform: none !important;
   -ms-transform: none !important;
   transform: none !important;
+}
+@media screen and (max-width: 768px) {
+  #page-header.full_page {
+    min-height: auto;
+    padding: 92px 0 48px;
+  }
 }
 #site-info,
 #page-site-info {
