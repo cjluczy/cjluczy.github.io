@@ -7349,19 +7349,11 @@ a {
 }
 .site-hero-panel {
   width: calc(100% - 28px) !important;
-  max-width: 1040px !important;
+  max-width: 860px !important;
   text-align: left !important;
 }
 .site-hero-panel .site-hero-main {
-  display: grid;
-  grid-template-columns: minmax(0, 1.52fr) minmax(300px, 0.8fr);
-  gap: 30px;
-  -webkit-box-align: start;
-  -moz-box-align: start;
-  -o-box-align: start;
-  -ms-flex-align: start;
-  -webkit-align-items: start;
-  align-items: start;
+  display: block;
 }
 .site-hero-panel .site-hero-copy {
   min-width: 0;
