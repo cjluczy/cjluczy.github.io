@@ -51,7 +51,6 @@
   })
 
   const boot = () => {
-    if (window.innerWidth < 1100) return
     if (window.__czBlogLive2dLoading || window.__czBlogLive2dInitialized) return
     if (document.getElementById('waifu')) {
       window.__czBlogLive2dInitialized = true
