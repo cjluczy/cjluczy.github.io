@@ -7264,23 +7264,11 @@ a {
   padding: 104px 0 72px;
   background-position: center 22%;
 }
-#page-header.full_page:before {
-  background: -webkit-linear-gradient(320deg, rgba(17,30,61,0.08), rgba(17,43,78,0.24));
-  background: -moz-linear-gradient(320deg, rgba(17,30,61,0.08), rgba(17,43,78,0.24));
-  background: -o-linear-gradient(320deg, rgba(17,30,61,0.08), rgba(17,43,78,0.24));
-  background: -ms-linear-gradient(320deg, rgba(17,30,61,0.08), rgba(17,43,78,0.24));
-  background: linear-gradient(130deg, rgba(17,30,61,0.08), rgba(17,43,78,0.24));
-}
+#page-header.full_page:before,
 #page-header.full_page:after {
-  position: absolute;
-  inset: 0;
-  background: -webkit-radial-gradient(circle at 18% 22%, rgba(255,255,255,0.12), transparent 18%), -webkit-radial-gradient(circle at 80% 16%, rgba(255,183,210,0.14), transparent 16%), -webkit-radial-gradient(circle at 78% 78%, rgba(144,214,255,0.12), transparent 20%);
-  background: -moz-radial-gradient(circle at 18% 22%, rgba(255,255,255,0.12), transparent 18%), -moz-radial-gradient(circle at 80% 16%, rgba(255,183,210,0.14), transparent 16%), -moz-radial-gradient(circle at 78% 78%, rgba(144,214,255,0.12), transparent 20%);
-  background: -o-radial-gradient(circle at 18% 22%, rgba(255,255,255,0.12), transparent 18%), -o-radial-gradient(circle at 80% 16%, rgba(255,183,210,0.14), transparent 16%), -o-radial-gradient(circle at 78% 78%, rgba(144,214,255,0.12), transparent 20%);
-  background: -ms-radial-gradient(circle at 18% 22%, rgba(255,255,255,0.12), transparent 18%), -ms-radial-gradient(circle at 80% 16%, rgba(255,183,210,0.14), transparent 16%), -ms-radial-gradient(circle at 78% 78%, rgba(144,214,255,0.12), transparent 20%);
-  background: radial-gradient(circle at 18% 22%, rgba(255,255,255,0.12), transparent 18%), radial-gradient(circle at 80% 16%, rgba(255,183,210,0.14), transparent 16%), radial-gradient(circle at 78% 78%, rgba(144,214,255,0.12), transparent 20%);
-  content: '';
-  pointer-events: none;
+  display: none !important;
+  background: none !important;
+  content: none !important;
 }
 #page-header.not-home-page:before,
 #page-header.post-bg:before {
@@ -7416,31 +7404,41 @@ a {
   background: rgba(255,255,255,0.18);
 }
 #page-header.not-top-img #nav,
-#page-header.nav-fixed #nav {
+#page-header.nav-fixed #nav,
+#page-header.fixed #nav {
   background: rgba(255,255,255,0.96);
   border: 1px solid rgba(232,238,248,0.96);
   -webkit-box-shadow: 0 10px 24px rgba(92,109,155,0.08);
   box-shadow: 0 10px 24px rgba(92,109,155,0.08);
-  backdrop-filter: none;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 #page-header.not-top-img #nav a,
 #page-header.nav-fixed #nav a,
+#page-header.fixed #nav a,
 #page-header.not-top-img #nav span.site-page,
 #page-header.nav-fixed #nav span.site-page,
+#page-header.fixed #nav span.site-page,
 #page-header.not-top-img #nav #toggle-menu,
 #page-header.nav-fixed #nav #toggle-menu,
+#page-header.fixed #nav #toggle-menu,
 #page-header.not-top-img #nav .site-name,
-#page-header.nav-fixed #nav .site-name {
+#page-header.nav-fixed #nav .site-name,
+#page-header.fixed #nav .site-name {
   color: var(--font-color);
 }
 #page-header.not-top-img #nav a:hover,
 #page-header.nav-fixed #nav a:hover,
+#page-header.fixed #nav a:hover,
 #page-header.not-top-img #nav span.site-page:hover,
 #page-header.nav-fixed #nav span.site-page:hover,
+#page-header.fixed #nav span.site-page:hover,
 #page-header.not-top-img #nav #toggle-menu:hover,
 #page-header.nav-fixed #nav #toggle-menu:hover,
+#page-header.fixed #nav #toggle-menu:hover,
 #page-header.not-top-img #nav .site-name:hover,
-#page-header.nav-fixed #nav .site-name:hover {
+#page-header.nav-fixed #nav .site-name:hover,
+#page-header.fixed #nav .site-name:hover {
   color: var(--btn-bg);
 }
 #page-header.not-top-img #nav {
@@ -7460,6 +7458,20 @@ a {
 }
 #page-header.nav-fixed.fixed #nav {
   top: 12px;
+}
+#page-header.fixed #nav {
+  background: rgba(255,255,255,0.94) !important;
+  background-image: none !important;
+  -webkit-box-shadow: 0 10px 24px rgba(92,109,155,0.08) !important;
+  box-shadow: 0 10px 24px rgba(92,109,155,0.08) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+#page-header.full_page:before,
+#page-header.full_page:after {
+  display: none !important;
+  background: none !important;
+  content: none !important;
 }
 #recent-posts .recent-post-item {
   margin-bottom: 26px;

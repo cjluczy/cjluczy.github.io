@@ -1,16 +1,16 @@
 'use strict'
 
 (() => {
-  const CDN_ROOT = 'https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main'
+  const LIVE2D_ROOT = '/live2d'
   const CONFIG = {
     path: {
       homePath: '/',
-      modelPath: `${CDN_ROOT}/Resources/`,
-      cssPath: `${CDN_ROOT}/waifu.css`,
-      tipsJsonPath: `${CDN_ROOT}/waifu-tips.json`,
-      tipsJsPath: `${CDN_ROOT}/waifu-tips.js`,
-      live2dCorePath: `${CDN_ROOT}/Core/live2dcubismcore.js`,
-      live2dSdkPath: `${CDN_ROOT}/live2d-sdk.js`
+      modelPath: `${LIVE2D_ROOT}/Resources/`,
+      cssPath: `${LIVE2D_ROOT}/waifu.css`,
+      tipsJsonPath: `${LIVE2D_ROOT}/waifu-tips.json`,
+      tipsJsPath: `${LIVE2D_ROOT}/waifu-tips.js`,
+      live2dCorePath: `${LIVE2D_ROOT}/Core/live2dcubismcore.js`,
+      live2dSdkPath: `${LIVE2D_ROOT}/live2d-sdk.js`
     },
     tools: ['hitokoto', 'express', 'switch-model', 'switch-texture', 'photo', 'info', 'quit'],
     drag: {
