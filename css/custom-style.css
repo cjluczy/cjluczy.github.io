@@ -1,0 +1,571 @@
+:root
+  --font-color: #21324d
+  --text-highlight-color: #182640
+  --card-meta: #7283a3
+  --card-bg: rgba(255, 255, 255, .82)
+  --sidebar-bg: rgba(255, 255, 255, .9)
+  --sidebar-menu-bg: rgba(255, 255, 255, .94)
+  --light-grey: #deebf7
+  --btn-bg: #5e7de6
+  --btn-hover-color: #ef8fb1
+  --default-bg-color: #5e7de6
+  --pseudo-hover: #ef8fb1
+  --scrollbar-color: #88a6f6
+  --card-box-shadow: 0 18px 48px rgba(86, 107, 158, .12)
+  --card-hover-box-shadow: 0 26px 68px rgba(86, 107, 158, .18)
+
+html
+  scroll-behavior: smooth
+
+body
+  background: radial-gradient(circle at 12% 18%, rgba(94, 125, 230, .16), transparent 22%), radial-gradient(circle at 87% 10%, rgba(239, 143, 177, .16), transparent 18%), radial-gradient(circle at 82% 82%, rgba(96, 210, 221, .12), transparent 18%), linear-gradient(180deg, #f3f8ff 0%, #fff7fa 48%, #f7fbff 100%)
+
+a
+  transition: all .25s ease
+
+#web_bg
+  opacity: .18
+  filter: saturate(1.08)
+
+.layout
+  max-width: 1280px
+  padding: 36px 18px 56px
+
+  +maxWidth768()
+    padding: 24px 8px 40px
+
+  & > div:first-child:not(.nc)
+    border: 1px solid rgba(255, 255, 255, .7)
+    border-top: 1px solid transparent
+    background: linear-gradient(145deg, rgba(255, 255, 255, .94), rgba(255, 255, 255, .76))
+    box-shadow: var(--card-box-shadow)
+    backdrop-filter: blur(18px)
+    addBorderRadius(30)
+
+#page-header
+  overflow: hidden
+
+  &.full_page
+    display: flex
+    align-items: center
+    justify-content: center
+    box-sizing: border-box
+    height: auto !important
+    min-height: 92vh
+    padding: 104px 0 72px
+    background-position: center 22%
+
+    &:before,
+    &:after
+      display: none !important
+      background: none !important
+      content: none !important
+
+  &.not-home-page,
+  &.post-bg
+    &:before
+      background: linear-gradient(180deg, rgba(19, 29, 55, .22), rgba(19, 29, 55, .45))
+
+  &.not-home-page
+    height: 340px
+
+    +maxWidth768()
+      height: 260px
+
+#site-info,
+#page-site-info,
+#post-info > *
+  position: relative
+  z-index: 2
+  margin: 0 auto
+  width: calc(100% - 28px)
+  max-width: 760px
+
+#page-header.full_page
+  #site-info
+    position: relative !important
+    top: auto !important
+    left: auto !important
+    margin: 0 auto
+    padding-left: 0
+    padding-right: 0
+    transform: none !important
+
+@media screen and (max-width: 768px)
+  #page-header
+    &.full_page
+      min-height: auto
+      padding: 92px 0 48px
+
+#page-site-info
+  padding: 30px 36px
+  background: linear-gradient(135deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, .08))
+  border: 1px solid rgba(255, 255, 255, .34)
+  border-top: 1px solid transparent
+  box-shadow: 0 26px 60px rgba(18, 34, 76, .22)
+  text-align: center
+  backdrop-filter: blur(18px)
+  addBorderRadius(30)
+
+  +maxWidth768()
+    padding: 24px 18px
+
+#page-header.full_page
+  #site-info
+    width: 100%
+    max-width: 1200px
+    padding: 0 10px !important
+    background: transparent !important
+    border: none !important
+    box-shadow: none !important
+    text-align: center
+    backdrop-filter: none !important
+
+#page-header
+  #site-title
+    font-weight: 700
+    letter-spacing: .04em
+
+  #site-subtitle
+    margin-top: 12px
+    color: rgba(255, 255, 255, .88)
+    font-weight: 500
+    line-height: 1.8
+
+#site_social_icons
+  margin-top: 18px !important
+
+#scroll-down
+  bottom: 26px !important
+
+  .scroll-down-effects
+    font-size: 24px !important
+
+#nav
+  height: 70px
+  padding: 0 24px
+  backdrop-filter: none
+
+  +maxWidth768()
+    padding: 0 14px
+
+  a,
+  span.site-page
+    text-shadow: none
+
+  .site-name
+    text-shadow: none
+    letter-spacing: .04em
+
+  .menus_items
+    .menus_item
+      padding-left: 16px
+
+      .menus_item_child
+        margin-top: 14px
+        border: 1px solid rgba(255, 255, 255, .76)
+        border-top: 1px solid transparent
+        background-color: rgba(255, 255, 255, .92)
+        box-shadow: 0 18px 36px rgba(84, 101, 150, .15)
+        backdrop-filter: blur(16px)
+        addBorderRadius(16)
+
+    .site-page
+      padding: 9px 14px
+      addBorderRadius(999, false)
+
+      &:not(.child)
+        &:after
+          display: none
+
+        &:hover
+          background: rgba(255, 255, 255, .18)
+
+#page-header.not-top-img,
+#page-header.nav-fixed,
+#page-header.fixed
+  #nav
+    background: rgba(255, 255, 255, .96)
+    border: 1px solid rgba(232, 238, 248, .96)
+    border-top: 1px solid transparent
+    box-shadow: 0 10px 24px rgba(92, 109, 155, .08)
+    backdrop-filter: none !important
+    -webkit-backdrop-filter: none !important
+
+    a,
+    span.site-page,
+    #toggle-menu,
+    .site-name
+      color: var(--font-color)
+
+      &:hover
+        color: var(--btn-bg)
+
+#page-header.not-top-img
+  #nav
+    top: 10px
+    left: 14px
+    right: 14px
+    width: auto
+    height: 64px
+    addBorderRadius(18)
+
+#page-header.nav-fixed
+  #nav
+    left: 14px
+    right: 14px
+    width: auto
+    height: 64px
+    addBorderRadius(18)
+
+  &.fixed
+    #nav
+      top: 12px
+
+#page-header.fixed
+  #nav
+    background: rgba(255, 255, 255, .94) !important
+    background-image: none !important
+    box-shadow: 0 10px 24px rgba(92, 109, 155, .08) !important
+    backdrop-filter: none !important
+    -webkit-backdrop-filter: none !important
+
+#page-header.full_page
+  &:before,
+  &:after
+    display: none !important
+    background: none !important
+    content: none !important
+
+#recent-posts
+  .recent-post-item
+    margin-bottom: 26px
+    border: 1px solid rgba(255, 255, 255, .74)
+    border-top: 1px solid transparent
+    background: linear-gradient(145deg, rgba(255, 255, 255, .94), rgba(255, 255, 255, .78))
+    box-shadow: var(--card-box-shadow)
+    backdrop-filter: blur(16px)
+    addBorderRadius(28)
+    transition: transform .28s ease, box-shadow .28s ease
+    overflow: hidden
+
+    &:hover
+      transform: translateY(-6px)
+      box-shadow: var(--card-hover-box-shadow)
+
+    .post_cover
+      position: relative
+      overflow: hidden
+      background: linear-gradient(145deg, rgba(94, 125, 230, .18), rgba(239, 143, 177, .16))
+
+      +minWidth768()
+        min-height: 100%
+        aspect-ratio: 7 / 5
+
+      +maxWidth768()
+        height: 250px
+
+      &:after
+        position: absolute
+        inset: 0
+        background: linear-gradient(180deg, rgba(17, 28, 57, 0) 0%, rgba(17, 28, 57, .16) 100%)
+        content: ''
+        pointer-events: none
+
+      .post-bg
+        width: 100%
+        height: 100%
+        object-fit: cover
+        transition: transform .75s ease, filter .4s ease
+
+    &:hover
+      .post_cover
+        .post-bg
+          transform: scale(1.04)
+          filter: saturate(1.03)
+
+    & > .recent-post-info
+      +maxWidth768()
+        padding: 24px 20px 28px
+
+      &.no-cover
+        padding: 32px 32px 30px
+
+      +minWidth768()
+        padding: 0 36px
+
+      & > .article-title
+        font-size: 1.68em
+        font-weight: 700
+        line-height: 1.35
+
+      & > .article-meta-wrap
+        display: flex
+        flex-wrap: wrap
+        gap: 10px
+        margin: 14px 0 16px
+        font-size: .88em
+
+        .article-meta-separator
+          display: none
+
+        & > span
+          display: inline-flex
+          align-items: center
+          gap: 6px
+          padding: 6px 12px
+          background: rgba(110, 141, 243, .08)
+          box-shadow: inset 0 0 0 1px rgba(110, 141, 243, .08)
+          addBorderRadius(999, false)
+
+        .article-meta.tags
+          background: rgba(240, 155, 189, .12)
+          box-shadow: inset 0 0 0 1px rgba(240, 155, 189, .1)
+
+        a
+          color: #5f72bf
+
+          &:hover
+            color: #ea7ea8
+            text-decoration: none
+
+      & > .content
+        -webkit-line-clamp: 3
+        color: rgba(35, 49, 79, .82)
+        line-height: 1.9
+
+    +minWidth768()
+      &:not(.no-cover)
+        .post_cover
+          width: 41%
+
+        & > .recent-post-info
+          width: 59%
+
+#aside-content
+  .card-widget
+    padding: 22px 24px
+    border: 1px solid rgba(255, 255, 255, .72)
+    border-top: 1px solid transparent
+    background: linear-gradient(145deg, rgba(255, 255, 255, .9), rgba(255, 255, 255, .76))
+    box-shadow: var(--card-box-shadow)
+    backdrop-filter: blur(16px)
+    addBorderRadius(24)
+
+  .card-info
+    background: linear-gradient(160deg, rgba(255, 255, 255, .94), rgba(246, 249, 255, .8))
+
+    &:before
+      position: absolute
+      inset: auto -20% -35% auto
+      width: 180px
+      height: 180px
+      background: radial-gradient(circle, rgba(110, 141, 243, .12), transparent 68%)
+      content: ''
+      pointer-events: none
+
+    .author-info-name
+      font-weight: 700
+      letter-spacing: .04em
+
+    .author-info-description
+      color: var(--card-meta)
+
+    #card-info-btn
+      background: linear-gradient(135deg, #6e8df3, #86a2ff)
+      box-shadow: 0 14px 30px rgba(110, 141, 243, .24)
+
+      &:hover
+        background: linear-gradient(135deg, #f09bbd, #f4abc6)
+
+  .card-recent-post .aside-list > .aside-list-item,
+  .card-categories .card-category-list > .card-category-list-item a,
+  .card-archives .card-archive-list > .card-archive-list-item a
+    addBorderRadius(14)
+
+  .card-categories .card-category-list > .card-category-list-item a,
+  .card-archives .card-archive-list > .card-archive-list-item a
+    padding: 8px 10px
+
+    &:hover
+      padding-left: 14px
+
+.avatar-img
+  width: 118px
+  height: 118px
+  border: 4px solid rgba(255, 255, 255, .86)
+  box-shadow: 0 18px 40px rgba(110, 141, 243, .2)
+
+.site-data
+  margin-top: 18px
+
+  & > a
+    div
+      transition: transform .2s ease, color .2s ease
+
+    &:hover
+      div
+        transform: translateY(-2px)
+
+#archive,
+#page,
+#post
+  addBorderRadius(28)
+
+#post-info
+  .post-title
+    text-shadow: none
+    font-weight: 700
+
+  #post-meta
+    color: rgba(255, 255, 255, .86)
+
+    a
+      color: rgba(255, 255, 255, .86)
+
+      &:hover
+        color: #fff
+
+.container.post-content
+  h1,
+  h2,
+  h3
+    letter-spacing: .01em
+
+  blockquote
+    border-left-width: 5px
+    background: linear-gradient(135deg, rgba(110, 141, 243, .08), rgba(240, 155, 189, .08))
+
+#pagination
+  .page-number.current
+    background: linear-gradient(135deg, #6e8df3, #8ca6ff)
+    box-shadow: 0 12px 24px rgba(110, 141, 243, .24)
+
+.layout
+  .pagination
+    & > *:not(.space)
+      border: 1px solid rgba(255, 255, 255, .72)
+      border-top: 1px solid transparent
+      background: rgba(255, 255, 255, .88)
+      box-shadow: 0 12px 28px rgba(92, 109, 155, .1)
+      addBorderRadius(14)
+
+      &:hover
+        background: linear-gradient(135deg, #f09bbd, #6e8df3)
+        box-shadow: 0 14px 28px rgba(110, 141, 243, .18)
+
+#footer
+  background: transparent
+
+#footer-wrap
+  margin: 0 auto 26px
+  max-width: 1240px
+  padding: 26px 24px 32px
+  border: 1px solid rgba(255, 255, 255, .72)
+  border-top: 1px solid transparent
+  background: linear-gradient(145deg, rgba(255, 255, 255, .78), rgba(255, 255, 255, .68))
+  box-shadow: var(--card-box-shadow)
+  color: #6e7e9b
+  backdrop-filter: blur(18px)
+  addBorderRadius(26)
+
+  a
+    color: #5b73c4
+
+    &:hover
+      text-decoration: none
+
+#rightside
+  > div,
+  > button
+    box-shadow: 0 14px 34px rgba(92, 109, 155, .16)
+
+html[data-theme='dark']
+  body
+    background: radial-gradient(circle at 12% 18%, rgba(110, 141, 243, .12), transparent 22%), radial-gradient(circle at 87% 10%, rgba(240, 155, 189, .1), transparent 18%), linear-gradient(180deg, #0d1324 0%, #121a2f 46%, #0f1628 100%)
+
+  #page-header
+    &.full_page
+      &:before
+        background: linear-gradient(135deg, rgba(4, 8, 20, .48), rgba(14, 24, 48, .62))
+
+    &.not-home-page,
+    &.post-bg
+      &:before
+        background: linear-gradient(180deg, rgba(4, 8, 20, .42), rgba(10, 18, 34, .62))
+
+  #site-info,
+  #page-site-info
+    background: linear-gradient(135deg, rgba(21, 31, 52, .54), rgba(15, 23, 39, .3))
+    border-color: rgba(184, 203, 255, .16)
+    border-top: 1px solid transparent
+    box-shadow: 0 26px 60px rgba(0, 0, 0, .28)
+
+  #page-header.not-top-img,
+  #page-header.nav-fixed
+    #nav
+      background: rgba(15, 22, 38, .96)
+      border-color: rgba(184, 203, 255, .12)
+      border-top: 1px solid transparent
+      box-shadow: 0 18px 42px rgba(0, 0, 0, .25)
+
+  .layout > div:first-child:not(.nc),
+  #recent-posts .recent-post-item,
+  #aside-content .card-widget,
+  #footer-wrap
+    border-color: rgba(184, 203, 255, .12)
+    border-top: 1px solid transparent
+    background: linear-gradient(145deg, rgba(18, 27, 44, .86), rgba(14, 21, 35, .72))
+    box-shadow: 0 18px 52px rgba(0, 0, 0, .26)
+
+  #recent-posts .recent-post-item > .recent-post-info > .content
+    color: rgba(234, 240, 255, .78)
+
+  #recent-posts .recent-post-item > .recent-post-info > .article-meta-wrap
+    & > span
+      background: rgba(110, 141, 243, .14)
+      box-shadow: inset 0 0 0 1px rgba(184, 203, 255, .08)
+
+    .article-meta.tags
+      background: rgba(240, 155, 189, .12)
+
+  .layout .pagination > *:not(.space)
+    background: rgba(18, 27, 44, .88)
+    border-color: rgba(184, 203, 255, .12)
+    border-top: 1px solid transparent
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .2)
+
+  .avatar-img
+    border-color: rgba(184, 203, 255, .2)
+
+  #footer-wrap
+    color: rgba(223, 232, 255, .78)
+
+    a
+      color: #9fb6ff
+
+  +maxWidth768()
+    #page-header.not-top-img #nav,
+    #page-header.nav-fixed #nav
+      left: 8px
+      right: 8px
+
+@media screen and (max-width: 768px)
+  #page-header.not-top-img #nav,
+  #page-header.nav-fixed #nav
+    left: 8px
+    right: 8px
+
+  #recent-posts
+    .recent-post-item
+      addBorderRadius(24)
+
+      & > .recent-post-info
+        &.no-cover
+          padding: 24px 20px 26px
+
+      & > .article-title
+          font-size: 1.45em
+
+      .post_cover
+        addBorderRadius(24)
