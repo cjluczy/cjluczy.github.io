@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 (() => {
   const LIVE2D_ROOT = '/live2d'
