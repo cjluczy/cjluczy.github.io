@@ -23,6 +23,15 @@
     box-shadow: none !important;
 }
 
+/* 导航栏透明背景 */
+#nav {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
 #body-wrap #pagination .page-number:not(.current):hover,
 #body-wrap #pagination .extend:hover {
     background: #ff7142d2;
