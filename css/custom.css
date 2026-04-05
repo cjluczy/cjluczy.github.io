@@ -23,13 +23,29 @@
     box-shadow: none !important;
 }
 
-/* 导航栏透明背景 */
+/* 导航栏完全透明 */
 #nav {
     background: transparent !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     border: none !important;
     box-shadow: none !important;
+    z-index: 9999 !important;
+}
+
+/* 确保整个页面背景一致 */
+#body-wrap {
+    background: transparent !important;
+}
+
+/* 移除页面容器的背景 */
+.layout {
+    background: transparent !important;
+}
+
+/* 确保文章页面背景透明 */
+#page {
+    background: transparent !important;
 }
 
 #body-wrap #pagination .page-number:not(.current):hover,
