@@ -3,7 +3,6 @@
 #body-wrap .recent-post-item,
 #body-wrap #aside-content .card-widget,
 #body-wrap .layout > div:first-child:not(.recent-posts),
-#body-wrap #nav .menus_items .menus_item .menus_item_child,
 #body-wrap #pagination .page-number:not(.current),
 #body-wrap #pagination .extend,
 #page-header #post-info {
@@ -13,6 +12,15 @@
     border: 1px solid rgba(255, 255, 255, 0.85);
     box-shadow: 0 8px 16px -4px rgba(138, 138, 138, 0.15);
     transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 导航栏子菜单透明背景 */
+#body-wrap #nav .menus_items .menus_item .menus_item_child {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 #body-wrap #pagination .page-number:not(.current):hover,
@@ -33,50 +41,6 @@ html[data-theme="dark"] #page-header #post-info {
     background: rgba(30, 30, 30, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.2);
-}
-
-/* 明亮主题文本颜色 */
-html:not([data-theme="dark"]) #site-title,
-html:not([data-theme="dark"]) .site-title,
-html:not([data-theme="dark"]) #site-name,
-html:not([data-theme="dark"]) #site-info .site-subtitle,
-html:not([data-theme="dark"]) #subtitle,
-html:not([data-theme="dark"]) #nav #blog-info .site-name,
-html:not([data-theme="dark"]) #nav #blog-info a {
-    color: #2c3e50 !important;
-    text-shadow: none !important;
-}
-
-html:not([data-theme="dark"]) #nav .site-page,
-html:not([data-theme="dark"]) #nav .menus_items .menus_item > a > span,
-html:not([data-theme="dark"]) #nav .menus_items .menus_item > a > i,
-html:not([data-theme="dark"]) #search-button > a,
-html:not([data-theme="dark"]) #search-button > a > span,
-html:not([data-theme="dark"]) #search-button > a > i {
-    color: #2c3e50 !important;
-    text-shadow: none !important;
-}
-
-html:not([data-theme="dark"]) #nav .menus_item:hover > a,
-html:not([data-theme="dark"]) #nav .menus_item:hover > a > span,
-html:not([data-theme="dark"]) #nav .menus_item:hover > a > i {
-    color: #49b1f5 !important;
-}
-
-html:not([data-theme="dark"]) #page-header .page-title,
-html:not([data-theme="dark"]) #footer,
-html:not([data-theme="dark"]) #footer a,
-html:not([data-theme="dark"]) #footer div,
-html:not([data-theme="dark"]) #footer p,
-html:not([data-theme="dark"]) #footer span,
-html:not([data-theme="dark"]) #footer .copyright *,
-html:not([data-theme="dark"]) #post-info .post-title,
-html:not([data-theme="dark"]) #post-info #post-meta,
-html:not([data-theme="dark"]) #post-info #post-meta a,
-html:not([data-theme="dark"]) #post-info #post-meta .post-meta-separator,
-html:not([data-theme="dark"]) #post-info #post-meta i {
-    color: #2c3e50 !important;
-    text-shadow: none !important;
 }
 
 /* 明亮主题导航栏子菜单颜色 */
