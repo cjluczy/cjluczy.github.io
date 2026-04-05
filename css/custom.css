@@ -23,8 +23,12 @@
     box-shadow: none !important;
 }
 
-/* 导航栏完全透明 */
-#nav {
+/* 导航栏透明背景 - 覆盖所有状态 */
+#nav,
+#page-header.not-top-img #nav,
+#page-header.nav-fixed #nav,
+#page-header.nav-fixed.fixed #nav,
+#page-header.nav-visible:not(.fixed) #nav {
     background: transparent !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
@@ -33,19 +37,27 @@
     z-index: 9999 !important;
 }
 
-/* 确保整个页面背景一致 */
-#body-wrap {
-    background: transparent !important;
+/* 确保导航栏文字颜色正确 */
+#nav a,
+#nav span.site-page,
+#nav .site-name,
+#nav #blog-info,
+#page-header.not-top-img #nav a,
+#page-header.not-top-img #nav span.site-page,
+#page-header.not-top-img #nav .site-name,
+#page-header.nav-fixed #nav a,
+#page-header.nav-fixed #nav span.site-page,
+#page-header.nav-fixed #nav .site-name,
+#page-header.nav-fixed #nav #blog-info {
+    color: var(--light-grey) !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .15) !important;
 }
 
-/* 移除页面容器的背景 */
-.layout {
-    background: transparent !important;
-}
-
-/* 确保文章页面背景透明 */
-#page {
-    background: transparent !important;
+/* 导航栏悬停效果 */
+#nav a:hover,
+#nav span.site-page:hover,
+#nav #blog-info:hover {
+    color: var(--white) !important;
 }
 
 #body-wrap #pagination .page-number:not(.current):hover,
@@ -79,15 +91,6 @@ html:not([data-theme="dark"]) #nav .menus_items .menus_item .menus_item_child li
 html:not([data-theme="dark"]) #nav .menus_items .menus_item .menus_item_child li.active a,
 html:not([data-theme="dark"]) #post-info #post-meta a:hover {
     color: #49b1f5 !important;
-}
-
-/* 页头与页脚透明 */
-#footer, #page-header.post-bg, #page-header.page-bg {
-    background: transparent !important;
-}
-
-#page-header.post-bg::before, #page-header.page-bg::before {
-    background-color: transparent !important;
 }
 
 /* 代码块样式优化 */
