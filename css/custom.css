@@ -1,3 +1,17 @@
+/* 彩色荧光字体效果 */
+#site-title, #subtitle, .site-name, .article-title {
+    animation: neon 2s ease-in-out infinite alternate;
+}
+
+@keyframes neon {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #49B1F5, 0 0 20px #49B1F5, 0 0 25px #49B1F5, 0 0 30px #49B1F5, 0 0 35px #49B1F5;
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff7142, 0 0 40px #ff7142, 0 0 50px #ff7142, 0 0 60px #ff7142, 0 0 70px #ff7142;
+    }
+}
+
 /* 1. 基础排版优化 */
 #body-wrap #page .page-title {
     text-align: center !important;
