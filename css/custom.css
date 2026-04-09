@@ -1,0 +1,387 @@
+/* 1. 基础排版优化 */
+#body-wrap #page .page-title {
+    text-align: center !important;
+}
+
+#article-container {
+    text-align: justify;
+}
+
+/* 2. 视频自适应 */
+iframe[src*="youtube.com"],
+iframe[src*="youtu.be"],
+iframe[src*="vimeo.com"] {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+}
+
+/* 4. 导航栏子菜单交互优化 */
+html:not([data-theme="dark"]) #nav .menus_items .menus_item .menus_item_child li:hover,
+html:not([data-theme="dark"]) #nav .menus_items .menus_item .menus_item_child li.active {
+    background: transparent !important; 
+}
+
+html:not([data-theme="dark"]) #nav .menus_items .menus_item .menus_item_child li:hover a,
+html:not([data-theme="dark"]) #nav .menus_items .menus_item .menus_item_child li:hover a span,
+html:not([data-theme="dark"]) #nav .menus_items .menus_item .menus_item_child li.active a,
+html:not([data-theme="dark"]) #post-info #post-meta a:hover {
+    color: #49b1f5 !important;
+}
+
+/* 5. 全局毛玻璃效果 */
+#body-wrap #recent-posts > .recent-post-item,
+#body-wrap .recent-post-item,
+#body-wrap #aside-content .card-widget,
+#body-wrap .layout > div:first-child:not(.recent-posts),
+#body-wrap #nav .menus_items .menus_item .menus_item_child,
+#body-wrap #pagination .page-number:not(.current),
+#body-wrap #pagination .extend {
+    background: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 8px 16px -4px rgba(138, 138, 138, 0.15);
+    transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+}
+
+#body-wrap #pagination .page-number:not(.current):hover,
+#body-wrap #pagination .extend:hover {
+    background: #ff7142d2;
+    border-color: #ff7142d2;
+    color: #fff;
+}
+
+/* 暗色模式毛玻璃 */
+html[data-theme="dark"] #body-wrap #recent-posts > .recent-post-item,
+html[data-theme="dark"] #body-wrap .recent-post-item,
+html[data-theme="dark"] #body-wrap #aside-content .card-widget,
+html[data-theme="dark"] #body-wrap .layout > div:first-child:not(.recent-posts),
+html[data-theme="dark"] #body-wrap #nav .menus_items .menus_item .menus_item_child,
+html[data-theme="dark"] #body-wrap #pagination .page-number:not(.current),
+html[data-theme="dark"] #body-wrap #pagination .extend {
+    background: rgba(30, 30, 30, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.2);
+}
+
+/* 6. 页头与页脚透明 */
+/* #footer, #page-header.post-bg, #page-header.page-bg {
+    background: transparent !important;
+}
+
+#page-header.post-bg::before, #page-header.page-bg::before {
+    background-color: transparent !important;
+} */
+
+/* 7. 文章卡片透明 */
+#body-wrap #recent-posts > .recent-post-item .recent-post-info,
+#body-wrap #recent-posts > .recent-post-item .recent-post-info::before,
+#body-wrap #recent-posts > .recent-post-item .recent-post-info::after,
+#body-wrap #recent-posts > .recent-post-item .recent-post-info > .article-title,
+#body-wrap #recent-posts > .recent-post-item .recent-post-info > .article-meta-wrap,
+#body-wrap #recent-posts > .recent-post-item .recent-post-info > .content {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important; 
+}
+
+/* 8. 文章标题卡片重新定位 */
+#page-header #post-info {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    display: block;
+    text-align: left;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    #page-header #post-info {
+        padding: 15px 20px !important;
+        bottom: 20px !important;
+    }
+    #post-info #post-meta > .meta-firstline > span:not(.post-meta-wordcount),
+    #post-info #post-meta > .meta-secondline > span:not(.post-meta-wordcount) {
+        display: none !important;
+    }
+    #post-info #post-meta > .meta-firstline > .post-meta-separator,
+    #post-info #post-meta > .meta-secondline > .post-meta-separator {
+        display: none !important;
+    }
+    #post-info .post-title {
+        text-align: justify !important;
+        text-align-last: left !important;
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+/* 9. Mermaid 流程图透明 */
+#article-container .mermaid,
+#article-container .mermaid svg,
+.mermaid-wrap,
+#article-container .mermaid svg rect.mermaid-bg,
+#article-container .mermaid svg rect:first-child {
+    background: transparent !important;
+    fill: transparent !important;
+}
+
+/* 10. 明亮主题代码块配色 */
+html:not([data-theme="dark"]) {
+    --hl-bg: #f4f7fa !important;
+    --hltools-bg: #e9eef4 !important;
+    --hlnumber-bg: #f4f7fa !important;
+    --hlnumber-color: #8da4bb !important;
+    --hlscrollbar-bg: #dbe6f0 !important;
+    --hlexpand-bg: linear-gradient(180deg, rgba(244,247,250,0), rgba(244,247,250,0.9)) !important;
+}
+
+html:not([data-theme="dark"]) #article-container .highlight table {
+    background-color: #f4f7fa !important;
+}
+
+html:not([data-theme="dark"]) .highlight .code .keyword,
+html:not([data-theme="dark"]) .highlight .code .built_in,
+html:not([data-theme="dark"]) .highlight .code .type {
+    color: #005cc5 !important;
+}
+
+html:not([data-theme="dark"]) .highlight .code .string {
+    color: #22863a !important;
+}
+
+html:not([data-theme="dark"]) .highlight .code .comment {
+    color: #677886 !important;
+    font-style: italic !important;
+}
+
+html:not([data-theme="dark"]) .highlight .code .number {
+    color: #d130a5 !important;
+}
+
+html:not([data-theme="dark"]) .highlight .code .title,
+html:not([data-theme="dark"]) .highlight .code .function {
+    color: #0077aa !important;
+}
+
+html:not([data-theme="dark"]) .highlight .code .meta,
+html:not([data-theme="dark"]) .highlight .code .meta-keyword {
+    color: #8b3c9b !important;
+}
+
+html:not([data-theme="dark"]) .highlight .code .attr,
+html:not([data-theme="dark"]) .highlight .code .variable,
+html:not([data-theme="dark"]) .highlight .code .params {
+    color: #212f3b !important;
+}
+
+/* 11. 夜间主题代码块配色 */
+html[data-theme="dark"] {
+    --hl-bg: #0b0f19 !important;
+    --hltools-bg: #111726 !important;
+    --hlnumber-bg: #0b0f19 !important;
+    --hlnumber-color: #5c6c7f !important;
+    --hlscrollbar-bg: #1e293b !important;
+    --hlexpand-bg: linear-gradient(180deg, rgba(11,15,25,0), rgba(11,15,25,0.9)) !important;
+}
+
+html[data-theme="dark"] #article-container .highlight table {
+    background-color: #0b0f19 !important;
+}
+
+html[data-theme="dark"] .highlight .code .keyword,
+html[data-theme="dark"] .highlight .code .built_in,
+html[data-theme="dark"] .highlight .code .type {
+    color: #569cd6 !important;
+}
+
+html[data-theme="dark"] .highlight .code .string {
+    color: #8fca5c !important;
+}
+
+html[data-theme="dark"] .highlight .code .comment {
+    color: #5c7080 !important;
+    font-style: italic !important;
+}
+
+html[data-theme="dark"] .highlight .code .number {
+    color: #f07178 !important;
+}
+
+html[data-theme="dark"] .highlight .code .title,
+html[data-theme="dark"] .highlight .code .function {
+    color: #82aaff !important;
+}
+
+html[data-theme="dark"] .highlight .code .meta,
+html[data-theme="dark"] .highlight .code .meta-keyword {
+    color: #c792ea !important;
+}
+
+html[data-theme="dark"] .highlight .code .attr,
+html[data-theme="dark"] .highlight .code .variable,
+html[data-theme="dark"] .highlight .code .params {
+    color: #a6bcdc !important;
+}
+
+/* 12. 表格样式 */
+#article-container table th,
+#article-container table thead th {
+    text-align: center !important;
+}
+
+html:not([data-theme="dark"]) #article-container table {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+html:not([data-theme="dark"]) #article-container table,
+html:not([data-theme="dark"]) #article-container table th,
+html:not([data-theme="dark"]) #article-container table td {
+    border-color: #919191da !important;
+    border-width: 1px !important;
+}
+
+html:not([data-theme="dark"]) #article-container table tbody tr:nth-child(even) {
+    background-color: rgba(240, 244, 248, 0.5) !important;
+}
+
+html[data-theme="dark"] #article-container table {
+    background-color: rgba(22, 27, 34, 0.5) !important; 
+}
+
+html[data-theme="dark"] #article-container table,
+html[data-theme="dark"] #article-container table th,
+html[data-theme="dark"] #article-container table td {
+    border-color: #5c6c7f !important;
+    border-width: 1px !important;
+}
+
+html[data-theme="dark"] #article-container table tbody tr:nth-child(even) {
+    background-color: rgba(30, 36, 44, 0.5) !important;
+}
+
+/* 导航栏文字设置为黑色 */
+#nav .nav-site-title .site-name,
+#nav .menus_items .menus_item a,
+#nav .menus_items .menus_item a span,
+#nav .menus_items .menus_item a i,
+#nav #search-button .site-page i {
+    color: #000000 !important;
+}
+
+/* 搜索按钮文字也设置为黑色 */
+#nav #search-button .site-page span {
+    color: #000000 !important;
+}
+
+/* 文章排版优化 */
+#article-container {
+    line-height: 1.8;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+#article-container p {
+    margin-bottom: 1.2em;
+}
+
+#article-container h1,
+#article-container h2,
+#article-container h3,
+#article-container h4,
+#article-container h5,
+#article-container h6 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: 600;
+}
+
+#article-container h1 {
+    font-size: 24px;
+}
+
+#article-container h2 {
+    font-size: 20px;
+}
+
+#article-container h3 {
+    font-size: 18px;
+}
+
+/* 文章卡片样式优化 */
+#recent-posts > .recent-post-item {
+    transition: all 0.3s ease;
+}
+
+#recent-posts > .recent-post-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px -8px rgba(138, 138, 138, 0.2) !important;
+}
+
+#recent-posts > .recent-post-item .recent-post-info .article-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 0.8em;
+    transition: color 0.3s ease;
+}
+
+#recent-posts > .recent-post-item:hover .recent-post-info .article-title {
+    color: #49b1f5 !important;
+}
+
+#recent-posts > .recent-post-item .article-meta-wrap {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* 文章卡片毛玻璃特效 */
+#recent-posts > .recent-post-item {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#recent-posts > .recent-post-item:hover {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/* 暗色模式下的毛玻璃效果 */
+[data-theme="dark"] #recent-posts > .recent-post-item {
+    background: rgba(30, 30, 30, 0.7);
+}
+
+[data-theme="dark"] #recent-posts > .recent-post-item:hover {
+    background: rgba(40, 40, 40, 0.8);
+}
+
+/* 页面滚动条样式 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(240, 240, 240, 0.8);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(150, 150, 150, 0.8);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 100, 100, 0.8);
+}

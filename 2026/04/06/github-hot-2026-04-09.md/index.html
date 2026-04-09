@@ -1,0 +1,396 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>2026 第14周 GitHub 最热开源项目精选 | 陈中越</title><meta name="author" content="中国计量大学 陈中越"><meta name="copyright" content="中国计量大学 陈中越"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言本周从 GitHub 精选了 8 个高热度新晋开源项目，涵盖多个技术方向，快来看看有没有你感兴趣的！ 项目详情🚀 claw-code 仓库：ultraworkers&#x2F;claw-code 语言：Rust 本周新增 ⭐：172891 标签：  这绝对是本周最炸裂的开源事件！基于 Rust 构建的 Coding Agent 工具，创造了 GitHub 历史上最快突破 10 万星标的纪录。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2026 第14周 GitHub 最热开源项目精选">
+<meta property="og:url" content="https://cjluczy.github.io/2026/04/06/github-hot-2026-04-09.md/index.html">
+<meta property="og:site_name" content="陈中越">
+<meta property="og:description" content="前言本周从 GitHub 精选了 8 个高热度新晋开源项目，涵盖多个技术方向，快来看看有没有你感兴趣的！ 项目详情🚀 claw-code 仓库：ultraworkers&#x2F;claw-code 语言：Rust 本周新增 ⭐：172891 标签：  这绝对是本周最炸裂的开源事件！基于 Rust 构建的 Coding Agent 工具，创造了 GitHub 历史上最快突破 10 万星标的纪录。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cjluczy.github.io/img/Touxiang.jpg">
+<meta property="article:published_time" content="2026-04-06T01:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-09T08:22:20.039Z">
+<meta property="article:author" content="中国计量大学 陈中越">
+<meta property="article:tag" content="开源">
+<meta property="article:tag" content="GitHub">
+<meta property="article:tag" content="技术周报">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cjluczy.github.io/img/Touxiang.jpg"><link rel="shortcut icon" href="/img/R.ico"><link rel="canonical" href="https://cjluczy.github.io/2026/04/06/github-hot-2026-04-09.md/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":800,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: '[object Object]',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '2026 第14周 GitHub 最热开源项目精选',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="web_bg" style="background-image: url(/img/rabbit.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/list/"><i class="fa-fw fas fa-list"></i><span> 列表</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.mwcy.net/"><i class="fa-fw fas fa-film"></i><span> 动漫</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://mu-jie.cc/musicBox/#/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.wangfeiyy.com/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.gamer520.com/"><i class="fa-fw fas fa-heart"></i><span> 游戏</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://biemoyu.com/#term-222"><i class="fa-fw fas fa-robot"></i><span> 多功能AI</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://8.217.118.4:5000/Main/Index"><i class="fa-fw fas fa-ellipsis-h"></i><span> 更多资源</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background: transparent;"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">陈中越</span></a><a class="nav-page-title" href="/"><span class="site-name">2026 第14周 GitHub 最热开源项目精选</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/list/"><i class="fa-fw fas fa-list"></i><span> 列表</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.mwcy.net/"><i class="fa-fw fas fa-film"></i><span> 动漫</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://mu-jie.cc/musicBox/#/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.wangfeiyy.com/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.gamer520.com/"><i class="fa-fw fas fa-heart"></i><span> 游戏</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://biemoyu.com/#term-222"><i class="fa-fw fas fa-robot"></i><span> 多功能AI</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://8.217.118.4:5000/Main/Index"><i class="fa-fw fas fa-ellipsis-h"></i><span> 更多资源</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">2026 第14周 GitHub 最热开源项目精选</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-04-06T01:00:00.000Z" title="发表于 2026-04-06 09:00:00">2026-04-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-04-09T08:22:20.039Z" title="更新于 2026-04-09 16:22:20">2026-04-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF%E5%91%A8%E6%8A%A5/">技术周报</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本周从 GitHub 精选了 8 个高热度新晋开源项目，涵盖多个技术方向，快来看看有没有你感兴趣的！</p>
+<h2 id="项目详情"><a href="#项目详情" class="headerlink" title="项目详情"></a>项目详情</h2><h3 id="🚀-claw-code"><a href="#🚀-claw-code" class="headerlink" title="🚀 claw-code"></a>🚀 claw-code</h3><ul>
+<li><strong>仓库</strong>：<a target="_blank" rel="noopener" href="https://github.com/ultraworkers/claw-code">ultraworkers&#x2F;claw-code</a></li>
+<li><strong>语言</strong>：Rust</li>
+<li><strong>本周新增 ⭐</strong>：172891</li>
+<li><strong>标签</strong>：</li>
+</ul>
+<p>这绝对是本周最炸裂的开源事件！基于 Rust 构建的 Coding Agent 工具，创造了 GitHub 历史上最快突破 10 万星标的纪录。如果你追求极致性能和高效的代码生成体验，这个项目值得第一时间关注。</p>
+<p><strong>适合谁用</strong>：追求高性能 AI 编程工具的早期尝鲜者，以及 Rust 技术栈开发者</p>
+<hr>
+<h3 id="🚀-awesome-design-md"><a href="#🚀-awesome-design-md" class="headerlink" title="🚀 awesome-design-md"></a>🚀 awesome-design-md</h3><ul>
+<li><strong>仓库</strong>：<a target="_blank" rel="noopener" href="https://github.com/VoltAgent/awesome-design-md">VoltAgent&#x2F;awesome-design-md</a></li>
+<li><strong>语言</strong>：HTML</li>
+<li><strong>本周新增 ⭐</strong>：20171</li>
+<li><strong>标签</strong>：awesome-list, design-md, design-system, design-tokens</li>
+</ul>
+<p>收集了各大知名网站 DESIGN.md 文件的宝藏仓库。这些文档详细记录了设计系统的规范，可以直接丢给 AI 编程助手，让它帮你生成风格一致的 UI 界面，省去了反复调样式的时间。</p>
+<p><strong>适合谁用</strong>：前端开发者、UI&#x2F;UX 设计师，以及使用 AI 辅助编程希望保持设计一致性的团队</p>
+<hr>
+<h3 id="🚀-openclaude"><a href="#🚀-openclaude" class="headerlink" title="🚀 openclaude"></a>🚀 openclaude</h3><ul>
+<li><strong>仓库</strong>：<a target="_blank" rel="noopener" href="https://github.com/Gitlawb/openclaude">Gitlawb&#x2F;openclaude</a></li>
+<li><strong>语言</strong>：TypeScript</li>
+<li><strong>本周新增 ⭐</strong>：17299</li>
+<li><strong>标签</strong>：</li>
+</ul>
+<p>一个开源的 Claude Code 替代品，支持 OpenAI、Gemini、DeepSeek、Ollama 等 200+ 模型。作为命令行编码代理工具，它打破了厂商锁定，让你能灵活切换底层模型来完成代码编写任务。</p>
+<p><strong>适合谁用</strong>：需要多模型备份方案的开发者，以及希望自建 AI 编程工作流的技术团队</p>
+<hr>
+<h3 id="🚀-claude-code"><a href="#🚀-claude-code" class="headerlink" title="🚀 claude-code"></a>🚀 claude-code</h3><ul>
+<li><strong>仓库</strong>：<a target="_blank" rel="noopener" href="https://github.com/claude-code-best/claude-code">claude-code-best&#x2F;claude-code</a></li>
+<li><strong>语言</strong>：TypeScript</li>
+<li><strong>本周新增 ⭐</strong>：14105</li>
+<li><strong>标签</strong>：</li>
+</ul>
+<p>这是 Claude Code 的”纯净可运行版”，修复了所有 TypeScript 类型问题，确保企业级可靠性。保留了原汁原味的功能，但解决了原版构建和运行的痛点，国内开发者也能轻松 <code>bun i</code> 一键安装运行。</p>
+<p><strong>适合谁用</strong>：想要体验 Claude Code 但受限于网络或构建问题的中文开发者，以及需要二次开发的企业用户</p>
+<hr>
+<h3 id="🚀-learn-coding-agent"><a href="#🚀-learn-coding-agent" class="headerlink" title="🚀 learn-coding-agent"></a>🚀 learn-coding-agent</h3><ul>
+<li><strong>仓库</strong>：<a target="_blank" rel="noopener" href="https://github.com/sanbuphy/learn-coding-agent">sanbuphy&#x2F;learn-coding-agent</a></li>
+<li><strong>语言</strong>：未知</li>
+<li><strong>本周新增 ⭐</strong>：11378</li>
+<li><strong>标签</strong>：</li>
+</ul>
+<p>一份系统性的 Coding Agent 研究资料汇总。从原理到实践，深度剖析 AI 编程代理的工作机制。如果你想理解 AI 是如何理解代码、规划任务和执行开发的，这是不错的学习资源。</p>
+<p><strong>适合谁用</strong>：AI 应用开发者、研究员，以及希望深入理解 Coding Agent 底层逻辑的技术人员</p>
+<hr>
+<h3 id="🚀-claude-code-sourcemap"><a href="#🚀-claude-code-sourcemap" class="headerlink" title="🚀 claude-code-sourcemap"></a>🚀 claude-code-sourcemap</h3><ul>
+<li><strong>仓库</strong>：<a target="_blank" rel="noopener" href="https://github.com/ChinaSiro/claude-code-sourcemap">ChinaSiro&#x2F;claude-code-sourcemap</a></li>
+<li><strong>语言</strong>：TypeScript</li>
+<li><strong>本周新增 ⭐</strong>：8495</li>
+<li><strong>标签</strong>：</li>
+</ul>
+<p>针对 Claude Code 的源码解析与映射工具，帮助开发者理解其内部架构和工作原理。对于想要学习顶级 AI 编程工具设计思路，或进行逆向工程研究的开发者来说是个实用工具。</p>
+<p><strong>适合谁用</strong>：对 Claude Code 架构感兴趣的技术研究者，以及希望开发类似工具的工程师</p>
+<hr>
+<h3 id="🚀-claurst"><a href="#🚀-claurst" class="headerlink" title="🚀 claurst"></a>🚀 claurst</h3><ul>
+<li><strong>仓库</strong>：<a target="_blank" rel="noopener" href="https://github.com/Kuberwastaken/claurst">Kuberwastaken&#x2F;claurst</a></li>
+<li><strong>语言</strong>：Rust</li>
+<li><strong>本周新增 ⭐</strong>：8444</li>
+<li><strong>标签</strong>：</li>
+</ul>
+<p>用 Rust 重写的终端 Coding Agent，同时包含了对 Claude Code 泄漏事件的深度技术分析。既是一个高性能的编程助手工具，也是一份技术考古报告，展示了如何用 Rust 实现高效的 AI 代码交互。</p>
+<p><strong>适合谁用</strong>：Rust 语言爱好者，以及对 Claude Code 技术实现细节感兴趣的开发者</p>
+<hr>
+<h3 id="🚀-career-ops"><a href="#🚀-career-ops" class="headerlink" title="🚀 career-ops"></a>🚀 career-ops</h3><ul>
+<li><strong>仓库</strong>：<a target="_blank" rel="noopener" href="https://github.com/santifer/career-ops">santifer&#x2F;career-ops</a></li>
+<li><strong>语言</strong>：Go</li>
+<li><strong>本周新增 ⭐</strong>：7947</li>
+<li><strong>标签</strong>：ai-agent, anthropic, automation, career</li>
+</ul>
+<p>基于 Claude Code 构建的 AI 驱动求职系统，支持 14 种技能模式，附带 Go 语言编写的可视化仪表盘和 PDF 生成功能。把 AI 代理从编程场景延伸到了职业发展领域，能批量处理求职申请和简历优化。</p>
+<p><strong>适合谁用</strong>：正在求职的开发者，以及希望用 AI 自动化求职流程的职场人士</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本周开源圈最显著的趋势是 <strong>Coding Agent 生态的爆发式增长</strong>，从 Claude Code 的各种替代实现、源码分析到基于其构建的垂直应用（如求职系统），AI 编程助手正从工具向平台演进。同时 <strong>Rust 语言在 AI 工具链中的崛起</strong> 值得关注，多个高性能项目选择 Rust 作为实现语言，追求极致的运行效率。此外，<strong>设计系统与 AI 的结合</strong> 也开始受到重视，awesome-design-md 项目预示着未来 AI 编程将更注重 UI 一致性和设计规范的理解。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://cjluczy.github.io">中国计量大学 陈中越</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://cjluczy.github.io/2026/04/06/github-hot-2026-04-09.md/">https://cjluczy.github.io/2026/04/06/github-hot-2026-04-09.md/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://cjluczy.github.io" target="_blank">陈中越</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%BC%80%E6%BA%90/">开源</a><a class="post-meta__tags" href="/tags/GitHub/">GitHub</a><a class="post-meta__tags" href="/tags/%E6%8A%80%E6%9C%AF%E5%91%A8%E6%8A%A5/">技术周报</a></div><div class="post-share"><div class="social-share" data-image="/img/Touxiang.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>打赏支持</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechatpay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/wechatpay.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/04/06/github-hot-2026-04-09/" title="2026 第14周 GitHub 最热开源项目精选"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">2026 第14周 GitHub 最热开源项目精选</div></div><div class="info-2"><div class="info-item-1">前言本周从 GitHub 精选了 8 个高热度新晋开源项目，涵盖多个技术方向，快来看看有没有你感兴趣的！ 项目详情🚀 claw-code 仓库：ultraworkers&#x2F;claw-code 语言：Rust 本周新增 ⭐：172891 标签：  这绝对是本周最炸裂的开源事件！基于 Rust 构建的 Coding Agent 工具，创造了 GitHub 历史上最快突破 10...</div></div></div></a><a class="pagination-related" href="/2026/04/05/test/" title="测试文章"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cat.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">测试文章</div></div><div class="info-2"><div class="info-item-1">测试文章这是一篇测试文章，用于验证博客是否正常工作。 </div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/04/06/github-hot-2026-04-09/" title="2026 第14周 GitHub 最热开源项目精选"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-06</div><div class="info-item-2">2026 第14周 GitHub 最热开源项目精选</div></div><div class="info-2"><div class="info-item-1">前言本周从 GitHub 精选了 8 个高热度新晋开源项目，涵盖多个技术方向，快来看看有没有你感兴趣的！ 项目详情🚀 claw-code 仓库：ultraworkers&#x2F;claw-code 语言：Rust 本周新增 ⭐：172891 标签：  这绝对是本周最炸裂的开源事件！基于 Rust 构建的 Coding Agent 工具，创造了 GitHub 历史上最快突破 10...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">中国计量大学 陈中越</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/cjluczy" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:cjluczy@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/384114823?spm_id_from=333.1007.0.0" target="_blank" title="Bilibili"><i class="fab fa-bilibili"></i></a><a class="social-icon" href="/img/weixin.jpg" target="_blank" title="WeChat"><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://www.linkedin.com/in/cjluczy" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a><a class="social-icon" href="https://orcid.org/0009-0001-5044-4000" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a><a class="social-icon" href="https://gitee.com/chen-zhongyue" target="_blank" title="Gitee"><i class="fab fa-gitee"></i></a><a class="social-icon" href="https://blog.csdn.net/yueyuezd?spm=1010.2135.3001.5343" target="_blank" title="CSDN"><i class="fab fa-code"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎查看收藏本人博客，记录日常学习内容，感谢您的支持！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%AF%A6%E6%83%85"><span class="toc-number">2.</span> <span class="toc-text">项目详情</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%80-claw-code"><span class="toc-number">2.1.</span> <span class="toc-text">🚀 claw-code</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%80-awesome-design-md"><span class="toc-number">2.2.</span> <span class="toc-text">🚀 awesome-design-md</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%80-openclaude"><span class="toc-number">2.3.</span> <span class="toc-text">🚀 openclaude</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%80-claude-code"><span class="toc-number">2.4.</span> <span class="toc-text">🚀 claude-code</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%80-learn-coding-agent"><span class="toc-number">2.5.</span> <span class="toc-text">🚀 learn-coding-agent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%80-claude-code-sourcemap"><span class="toc-number">2.6.</span> <span class="toc-text">🚀 claude-code-sourcemap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%80-claurst"><span class="toc-number">2.7.</span> <span class="toc-text">🚀 claurst</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9A%80-career-ops"><span class="toc-number">2.8.</span> <span class="toc-text">🚀 career-ops</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/04/06/test-format/" title="测试文章格式"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cat.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="测试文章格式"/></a><div class="content"><a class="title" href="/2026/04/06/test-format/" title="测试文章格式">测试文章格式</a><time datetime="2026-04-06T15:55:00.000Z" title="发表于 2026-04-06 23:55:00">2026-04-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/06/github-hot-2026-04-09/" title="2026 第14周 GitHub 最热开源项目精选">2026 第14周 GitHub 最热开源项目精选</a><time datetime="2026-04-06T01:00:00.000Z" title="发表于 2026-04-06 09:00:00">2026-04-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/06/github-hot-2026-04-09.md/" title="2026 第14周 GitHub 最热开源项目精选">2026 第14周 GitHub 最热开源项目精选</a><time datetime="2026-04-06T01:00:00.000Z" title="发表于 2026-04-06 09:00:00">2026-04-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/05/test/" title="测试文章"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cat.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="测试文章"/></a><div class="content"><a class="title" href="/2026/04/05/test/" title="测试文章">测试文章</a><time datetime="2026-04-05T04:00:00.000Z" title="发表于 2026-04-05 12:00:00">2026-04-05</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2026 By 中国计量大学 陈中越</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+      
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><div class="aplayer no-destroy" data-id="2379161415" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-lrcType="-1" data-mutex="true" data-listmaxheight="300px" data-theme="#49b1f5" data-mini="true"> </div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const option = null
+  const config = {"site_uv":false,"site_pv":false,"page_pv":false,"token":null}
+
+  const runTrack = () => {
+    umami.track(props => ({ ...props, url: window.location.pathname, title: GLOBAL_CONFIG_SITE.title }))
+  }
+
+  const loadUmamiJS = () => {
+    btf.getScript('https://cloud.umami.is/script.js', {
+      'data-website-id': '',
+      'data-auto-track': 'false',
+      ...option
+    }).then(runTrack)
+  }
+
+  const getData = async (isPost) => {
+    const now = Date.now()
+    const keyUrl = isPost ? `&url=${window.location.pathname}` : ''
+    const headerList = { 'Accept': 'application/json' }
+    if (false) headerList['Authorization'] = `Bearer ${config.token}`
+    else headerList['x-umami-api-key'] = config.token
+    const res = await fetch(`https://api.umami.is/v1/websites//stats?startAt=0000000000&endAt=${now}${keyUrl}`, {
+      method: "GET",
+      headers: headerList
+    })
+    return await res.json()
+  }
+
+  const insertData = async () => {
+    try {
+      if (GLOBAL_CONFIG_SITE.isPost && config.page_pv) {
+        const pagePV = document.getElementById('umamiPV')
+        if (pagePV) {
+          const data = await getData(true)
+          pagePV.textContent = data.pageviews.value
+        }
+      } else {
+        const data = (config.site_uv || config.site_pv) && await getData()
+        if (config.site_uv) {
+          const siteUV = document.getElementById('umami-site-uv')
+          if (siteUV) siteUV.textContent = data.visitors.value
+        }
+        if (config.site_pv) {
+          const sitePV = document.getElementById('umami-site-pv')
+          if (sitePV) sitePV.textContent = data.pageviews.value
+        }
+      }
+    } catch (e) {
+      console.error('Failed to load Umami Analytics:', e)
+    }
+  }
+
+  btf.addGlobalFn('pjaxComplete', runTrack, 'umami_analytics_run_track')
+  btf.addGlobalFn('pjaxComplete', insertData, 'umami_analytics_insert')
+
+  loadUmamiJS()
+  insertData()
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索..." type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
