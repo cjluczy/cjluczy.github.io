@@ -20,7 +20,7 @@ window.BLOG_LIVE2D_AI_CONFIG = {
     maxTokens: 900,
     temperature: 0.7
   },
-  assetBase: "https://cdn.jsdelivr.net/gh/LuoTian001/live2d-widget-AIChat@main/",
+  assetBase: "/live2d/",
   engineBase: "https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main",
   widget: {
     tools: ["hitokoto", "express", "info", "quit"],
