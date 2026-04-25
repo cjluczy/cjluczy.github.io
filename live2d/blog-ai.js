@@ -20,14 +20,6 @@
     maxHistory: 8,
     requestTimeout: 30000,
     apiUrl: "",
-    directApi: {
-      enabled: false,
-      baseUrl: "",
-      apiKey: "",
-      model: "",
-      maxTokens: 900,
-      temperature: 0.7
-    },
     assetBase: "https://cdn.jsdelivr.net/gh/LuoTian001/live2d-widget-AIChat@main/",
     engineBase: "https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main",
     widget: {
@@ -52,10 +44,8 @@
   function mergeConfig() {
     var userConfig = window.BLOG_LIVE2D_AI_CONFIG || {};
     var widget = Object.assign({}, defaultConfig.widget, userConfig.widget || {});
-    var directApi = Object.assign({}, defaultConfig.directApi, userConfig.directApi || {});
     return Object.assign({}, defaultConfig, userConfig, {
-      widget: widget,
-      directApi: directApi
+      widget: widget
     });
   }
 
@@ -332,27 +322,30 @@
     var mode = getMode(config);
 
     if (mode === "proxy") {
-      status.textContent = "Proxy mode. Blog context is attached automatically.";
-      hint.textContent = "You are using a local proxy. Good for local debugging.";
-    } else if (mode === "direct") {
-      status.textContent = "Direct AI mode. This site talks to the model API directly.";
-      hint.textContent = "Your API key is exposed in the frontend for this public site.";
+      status.textContent = isLocalProxy(config.apiUrl)
+        ? "Local proxy mode. Blog context is attached automatically."
+        : "Secure proxy mode. Blog context is attached automatically.";
+      hint.textContent = isLocalProxy(config.apiUrl)
+        ? "You are using a local proxy for debugging."
+        : "Requests go through your own backend, so the model key stays off the public page.";
     } else {
       status.textContent = "Local search mode only.";
-      hint.textContent = "No AI endpoint is configured. I can still find relevant posts.";
+      hint.textContent =
+        "No production AI proxy is configured yet. I can still find relevant posts from this blog.";
     }
 
     panel.classList.toggle("is-open", state.open);
   }
 
   function getMode(config) {
-    if (config.apiUrl) {
+    if (typeof config.apiUrl === "string" && config.apiUrl.trim()) {
       return "proxy";
     }
-    if (config.directApi && config.directApi.enabled && config.directApi.apiKey) {
-      return "direct";
-    }
     return "local";
+  }
+
+  function isLocalProxy(apiUrl) {
+    return /^https?:\/\/(127\.0\.0\.1|localhost)(:\d+)?\//i.test(String(apiUrl || ""));
   }
 
   function setPanelOpen(open) {
@@ -488,21 +481,12 @@
           });
         }
 
-        if (mode === "direct") {
-          return requestDirectReply(config, question, matches).catch(function () {
-            return buildLocalReply(matches);
-          });
-        }
-
         return Promise.resolve(buildLocalReply(matches));
       })
       .catch(function () {
         var mode = getMode(config);
         if (mode === "proxy") {
           return requestProxyReply(config, question, []);
-        }
-        if (mode === "direct") {
-          return requestDirectReply(config, question, []);
         }
         return {
           text: "I could not read the local search index just now.",
@@ -648,85 +632,6 @@
         systemPrompt: config.systemPrompt
       }
     };
-  }
-
-  function requestDirectReply(config, question, matches) {
-    var directApi = config.directApi || {};
-    var baseUrl = String(directApi.baseUrl || "").replace(/\/$/, "");
-    var messages = buildOpenAIMessages(config, question, matches);
-
-    return requestJson(
-      baseUrl + "/chat/completions",
-      {
-        model: directApi.model,
-        messages: messages,
-        max_tokens: directApi.maxTokens,
-        temperature: directApi.temperature,
-        stream: false
-      },
-      config.requestTimeout,
-      {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + directApi.apiKey
-      }
-    ).then(function (data) {
-      var text = extractReplyText(data);
-      if (!text) {
-        throw new Error("No reply text found");
-      }
-      return {
-        text: text,
-        references: matches
-      };
-    });
-  }
-
-  function buildOpenAIMessages(config, question, matches) {
-    var messages = [
-      { role: "system", content: config.systemPrompt }
-    ];
-
-    if (matches.length) {
-      messages.push({
-        role: "system",
-        content:
-          "Relevant blog context:\n\n" +
-          matches
-            .map(function (item, index) {
-              return (
-                "[#" +
-                (index + 1) +
-                "] " +
-                item.title +
-                "\nURL: " +
-                item.url +
-                "\nExcerpt: " +
-                item.excerpt
-              );
-            })
-            .join("\n\n")
-      });
-    }
-
-    state.history.slice(-config.maxHistory).forEach(function (item) {
-      messages.push({
-        role: item.role === "assistant" ? "assistant" : "user",
-        content: item.content
-      });
-    });
-
-    messages.push({
-      role: "user",
-      content:
-        "Page title: " +
-        document.title +
-        "\nPage URL: " +
-        window.location.href +
-        "\nQuestion: " +
-        question
-    });
-
-    return messages;
   }
 
   function requestJson(url, payload, timeout, headers) {
