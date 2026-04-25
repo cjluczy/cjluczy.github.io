@@ -1,0 +1,259 @@
+#waifu {
+  overflow: visible;
+}
+
+#waifu-tool-chat {
+  align-items: center;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 11px;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: 0.06em;
+  min-width: 28px;
+  text-transform: uppercase;
+}
+
+#blog-ai-panel {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(73, 177, 245, 0.2);
+  border-radius: 18px;
+  bottom: 112px;
+  box-shadow: 0 24px 60px rgba(35, 58, 92, 0.18);
+  color: #223047;
+  display: flex;
+  flex-direction: column;
+  max-height: 560px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: calc(100% + 18px);
+  transform: translateY(12px) scale(0.98);
+  transform-origin: bottom right;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  width: 340px;
+  z-index: 30;
+}
+
+#blog-ai-panel.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.blog-ai-panel__header {
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(73, 177, 245, 0.14);
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 14px 16px 12px;
+}
+
+.blog-ai-panel__title {
+  display: grid;
+  gap: 3px;
+}
+
+.blog-ai-panel__title strong {
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.blog-ai-panel__status {
+  color: #5d728d;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.blog-ai-panel__close {
+  background: transparent;
+  border: 0;
+  color: #6d819a;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+}
+
+.blog-ai-panel__messages {
+  display: grid;
+  gap: 12px;
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 14px 16px;
+}
+
+.blog-ai-message {
+  display: grid;
+  gap: 8px;
+  justify-items: flex-start;
+}
+
+.blog-ai-message--user {
+  justify-items: flex-end;
+}
+
+.blog-ai-message__bubble {
+  background: #eef6ff;
+  border-radius: 14px;
+  color: #24415e;
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: 100%;
+  padding: 10px 12px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.blog-ai-message--user .blog-ai-message__bubble {
+  background: linear-gradient(135deg, #49b1f5, #6dd5fa);
+  color: #fff;
+}
+
+.blog-ai-message__meta {
+  color: #7a8ea6;
+  font-size: 11px;
+  padding: 0 4px;
+}
+
+.blog-ai-message__refs {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+}
+
+.blog-ai-ref {
+  background: rgba(73, 177, 245, 0.08);
+  border-radius: 12px;
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+}
+
+.blog-ai-ref a {
+  color: #1e6fb7;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.blog-ai-ref p {
+  color: #54687f;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.blog-ai-panel__footer {
+  border-top: 1px solid rgba(73, 177, 245, 0.14);
+  display: grid;
+  gap: 10px;
+  padding: 12px 16px 16px;
+}
+
+.blog-ai-panel__hint {
+  color: #6f839a;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.blog-ai-panel__composer {
+  align-items: flex-end;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr auto;
+}
+
+.blog-ai-panel__composer textarea {
+  background: rgba(245, 249, 255, 0.92);
+  border: 1px solid rgba(73, 177, 245, 0.18);
+  border-radius: 12px;
+  color: #24364a;
+  font: inherit;
+  min-height: 74px;
+  outline: none;
+  padding: 10px 12px;
+  resize: none;
+}
+
+.blog-ai-panel__composer textarea:focus {
+  border-color: rgba(73, 177, 245, 0.44);
+  box-shadow: 0 0 0 3px rgba(73, 177, 245, 0.08);
+}
+
+.blog-ai-panel__composer button {
+  background: linear-gradient(135deg, #49b1f5, #5fc7f8);
+  border: 0;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  min-width: 72px;
+  padding: 12px 14px;
+}
+
+.blog-ai-panel__composer button[disabled] {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+html[data-theme="dark"] #blog-ai-panel {
+  background: rgba(20, 29, 41, 0.96);
+  border-color: rgba(118, 167, 211, 0.18);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+  color: #deebff;
+}
+
+html[data-theme="dark"] .blog-ai-panel__header,
+html[data-theme="dark"] .blog-ai-panel__footer {
+  border-color: rgba(118, 167, 211, 0.14);
+}
+
+html[data-theme="dark"] .blog-ai-panel__status,
+html[data-theme="dark"] .blog-ai-message__meta,
+html[data-theme="dark"] .blog-ai-panel__hint {
+  color: #97adc7;
+}
+
+html[data-theme="dark"] .blog-ai-message__bubble {
+  background: rgba(79, 118, 161, 0.22);
+  color: #e8f3ff;
+}
+
+html[data-theme="dark"] .blog-ai-message--user .blog-ai-message__bubble {
+  background: linear-gradient(135deg, #3e94cf, #5abbe6);
+}
+
+html[data-theme="dark"] .blog-ai-ref {
+  background: rgba(79, 118, 161, 0.18);
+}
+
+html[data-theme="dark"] .blog-ai-ref a {
+  color: #8fd4ff;
+}
+
+html[data-theme="dark"] .blog-ai-ref p {
+  color: #b5c7db;
+}
+
+html[data-theme="dark"] .blog-ai-panel__composer textarea {
+  background: rgba(10, 18, 29, 0.96);
+  border-color: rgba(118, 167, 211, 0.16);
+  color: #deebff;
+}
+
+@media screen and (max-width: 1366px) {
+  #blog-ai-panel {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  #blog-ai-panel {
+    bottom: calc(100% + 20px);
+    right: 8px;
+    transform-origin: bottom right;
+  }
+}
