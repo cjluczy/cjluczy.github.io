@@ -1,31 +1,29 @@
 (function () {
-  var isLocalhost = ["127.0.0.1", "localhost"].includes(window.location.hostname);
-
-  // Public sites should point this to your own proxy URL.
-  // GitHub Pages is static, so the model key must live in a separate backend.
-  var productionApiUrl = "";
-
   window.BLOG_LIVE2D_AI_CONFIG = {
     enabled: true,
     minWidth: 768,
     autoOpenOnFirstVisit: true,
-    assistantName: "Blog AI",
+    assistantName: "小月",
+    shortWelcome:
+      "你好，欢迎来到主人的博客，我是博客助手“小月”。想找文章、看分类或随便逛逛，都可以点我。",
     welcomeMessage:
-      "Hi, I am your Live2D blog assistant. I can search this blog and answer with AI.",
+      "你好，欢迎来到主人的博客，我是主人的博客助手“小月”，有什么需要帮助的吗？\n我可以帮您：浏览文章、查找博文、推荐相关内容、看看分类和标签。",
+    helperDescription: "我只会根据主人的博客内容回答，不接外部通用对话。",
     searchJsonPath: "/search.json",
-    localSearchLimit: 3,
-    maxHistory: 8,
-    requestTimeout: 30000,
-    apiUrl: isLocalhost ? "http://127.0.0.1:8787/api/blog-ai" : productionApiUrl,
+    localSearchLimit: 4,
+    quickActions: [
+      { label: "最新文章", query: "最新文章" },
+      { label: "博客写了什么", query: "这个博客写了什么" },
+      { label: "分类和标签", query: "有哪些分类和标签" },
+      { label: "帮我推荐", query: "帮我推荐几篇文章" }
+    ],
     assetBase: "/live2d/",
     engineBase: "https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main",
     widget: {
-      tools: ["hitokoto", "express", "info", "quit"],
+      tools: [],
       dragEnable: false,
       dragDirection: ["x", "y"],
       switchType: "order"
-    },
-    systemPrompt:
-      "You are the live2d assistant for this blog. Be concise, helpful, and prefer answers grounded in the provided blog context."
+    }
   };
 })();

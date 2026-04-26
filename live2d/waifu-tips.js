@@ -416,6 +416,31 @@
         return e;
     }
 
+    H = function () {
+        if (location.pathname === k && A && Array.isArray(A.time)) {
+            for (let { hour: t, text: c } of A.time) {
+                let s = new Date(),
+                    i = Number(t.split("-")[0]),
+                    l = Number(t.split("-")[1] || i);
+                if (i <= s.getHours() && s.getHours() <= l) return c;
+            }
+        }
+        let e = document.title.split(" - ")[0] || "这篇文章",
+            o = `欢迎来到<span>「${e}」</span>`;
+        if (document.referrer !== "") try {
+            let t = new URL(document.referrer),
+                c = t.hostname.split(".")[1],
+                s = {
+                    baidu: "百度",
+                    so: "360搜索",
+                    google: "Google"
+                };
+            if (location.hostname === t.hostname) return o;
+            return c in s ? `你好呀，刚从<span>${s[c]}</span> 过来吗？<br>${o}` : `你好呀，欢迎从<span>${t.hostname}</span> 来到这里。<br>${o}`;
+        } catch (t) {}
+        return o;
+    };
+
     function z() {
         a(H(), 7000, 11);
     }

@@ -1,12 +1,4 @@
 {
-    "models": [
-        [
-            "ariu"
-        ]
-    ],
-    "messages": [
-        [
-            "来自 BiliBili 的 ariu 酱 ~"
-        ]
-    ]
+  "models": [["mao"]],
+  "messages": [["小月来啦，今天也一起看看主人的博客吧。"]]
 }
